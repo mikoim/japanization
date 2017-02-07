@@ -25,7 +25,7 @@ SECRET_KEY = 'v1*iccl1y%vi*-&aapo(vva7_eu*&6cn%$qt^b46&d!u+7^-#u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['japanization.miko.im']
 
 
 # Application definition
