@@ -1,20 +1,23 @@
 {% extends "reviews/base.html" %}
 
-{% block title %}Auth{% endblock title %}
+{% block title %}Japanese Mod DB{% endblock title %}
 
 {% block content %}
     <div>
         <ul>
             {% if user and not user.is_anonymous %}
                 <li>
-                    <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+                    <a>Logged in as {{ user.get_full_name|default:user.username }}!</a>
                 </li>
                 <li>
-                    <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+                    <a href="/admin">Admin</a>
+                </li>
+                <li>
+                    <a href="{% url 'auth:logout' %}?next={{ request.path }}">Sign out</a>
                 </li>
             {% else %}
                 <li>
-                    <a href="{% url 'social:begin' 'steam' %}?next={{ request.path }}">Login with Twitter</a>
+                    <a href="{% url 'social:begin' 'steam' %}?next={{ request.path }}"><img src="https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png" alt="Sign in through Steam" height="35" width="180"></a>
                 </li>
             {% endif %}
         </ul>
