@@ -26,9 +26,9 @@ def steam_id_by_name(name: str) -> int:
     return parse_steam_id(res.text)
 
 
-def parse_steam_id(xml: str) -> int:
+def parse_steam_id(xml: str) -> str:
     root = BeautifulSoup(xml, "lxml-xml")
-    return int(root.find('steamID64').contents[0])
+    return str(root.find('steamID64').contents[0])
 
 
 def parse_privileged_member_names(html: str) -> list:
