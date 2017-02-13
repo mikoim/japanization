@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -110,6 +111,27 @@ if os.environ.get('DATABASE_URL'):
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
 
+# Cache
+# https://docs.djangoproject.com/en/1.10/ref/settings/#caches
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    }
+}
+
+if os.environ.get('REDIS_URL'):
+    redis_url = urlparse(os.environ.get('REDIS_URL'))
+    CACHES = {
+        "default": {
+             "BACKEND": "redis_cache.RedisCache",
+             "LOCATION": "{0}:{1}".format(redis_url.hostname, redis_url.port),
+             "OPTIONS": {
+                 "PASSWORD": redis_url.password,
+                 "DB": 0,
+             }
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
