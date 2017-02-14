@@ -1,0 +1,81 @@
+{% extends "reviews/base.html" %}
+{% load static %}
+
+{% block title %}Steam 日本語化情報グループ 掲載情報{% endblock title %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static "reviews/style.css" %}">
+{% endblock extrahead %}
+
+{% block content %}
+
+    <div class="group-box">
+        <span class="group-title"><a
+                href="http://steamcommunity.com/groups/japanization">Steam 日本語化情報グループ 掲載情報</a></span>
+        <span class="group-summary">
+
+<p>当ページ(サイト)では <a href="http://store.steampowered.com/">Steam</a> 内の <a
+        href="http://steamcommunity.com/groups/japanization">日本語化情報</a> が保守管理している <a
+        href="/api/reviews/?format=json">データベース(JSON)</a> を利用しています。</p>
+
+<dl>
+	<dt>お願い</dt>
+	<ol>
+		<li>日本語化パッチに関する情報は、多くの皆様からの情報提供と無償ボランティアによる保守運営で成り立っています。配布が中断されている・パッチが適用できない、など掲載されている情報に不備が見つかった場合 <a
+                href="http://steamcommunity.com/groups/japanization">日本語化情報</a> にて積極的に情報を提供して下さいますようよろしくお願いいたします。</li>
+	</ol>
+</dl>
+
+<dl>
+	<dt>免責</dt>
+	<ol>
+		<li>各リンク先は外部サイトとなっており 当サイト 並びに <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a> とは一切の関係がありません。閲覧は自己責任でお願いします。</li>
+		<li>日本語化パッチは配布が中断されたり、最新版への適用が出来ない場合があります。またウィルス感染の危険性もあります。ファイルのダウンロード及びパッチ適用は自己責任で行ってください。</li>
+		<li>記載されている会社名・製品名などの名称は各社の商標または登録商標です。</li>
+	</ol>
+</dl>
+
+<dl>
+	<dt>デベロッパー・パブリッシャー 各位(Dear Developer / Publisher)</dt>
+	<ol>
+		<li>掲載情報の取り下げや日本語化情報の提供に関するお問い合わせは <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a> までお願い致します。<br/>
+For inquiries concerning withdrawal of posted information and provision of Japanese localize information, please contact <a
+                    href="http://steamcommunity.com/groups/japanization">Japanization Group in Steam</a>. </li>
+	</ol>
+</dl>
+
+            <!-- ここまで //--></span>
+    </div>
+
+    {% for review in object_list %}
+        <div class="app-box">
+            <div class="app-icon-box">
+                <a href="http://store.steampowered.com/app/{{ review.steam_app_id }}/">
+                    <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg"
+                         alt="{{ review.name }}" class="app-icon">
+                </a>
+            </div>
+            <div class="app-info-box">
+                <span class="app-title">{{ review.name }}</span><br>
+                <span class="app-japanize">
+                    {% if review.localized_by_developer %}
+                        [開発者による対応]
+                    {% elif review.localized_by_community %}
+                        [コミュニティによる対応]
+                    {% else %}
+                        [不明]
+                    {% endif %}
+                </span><br>
+                <span class="app-comment">{{ review.review_summary }}</span><br>
+                <span class="app-url"><a href="{{ review.review_detail_link }}">詳細情報を読む...</a></span>
+            </div>
+            <hr class="app-box-separator">
+        </div>
+    {% endfor %}
+
+    <div class="bottom-message">
+        当サイトに掲載しているゲームの画像、諸権利などは、Steam・Valveならびにデベロッパー各社が保有しています。<br/>
+        日本語化に関する情報はSteamの日本語化情報グループに寄せられたものを掲載しています。
+    </div>
+
+
+{% endblock content %}

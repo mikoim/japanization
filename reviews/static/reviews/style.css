@@ -1,0 +1,75 @@
+/* @import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic); */
+body {
+    font-family: "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", sans-serif;
+}
+
+.group-box {
+    padding: 15px;
+    border: thin solid #000000;
+}
+
+.group-icon-box {
+    float: left;
+    padding: 15px;
+}
+
+.group-info-box {
+    float: left;
+}
+
+.group-icon {
+    width: 122px;
+    height: 122px;
+}
+
+.group-title {
+    font-size: large;
+}
+
+.group-summary {
+    font-size: small;
+}
+
+.app-box {
+}
+
+.app-icon-box {
+    float: left;
+    padding: 5px;
+
+}
+
+.app-info-box {
+    float: left;
+    line-height: 100%;
+}
+
+.app-box-separator {
+    clear: both;
+}
+
+.app-icon {
+    width: 154px;
+    height: 72px;
+}
+
+.app-title {
+    font-weight: bold;
+    font-size: medium;
+}
+
+.app-japanize {
+    font-size: small;
+}
+
+.app-comment {
+    font-size: small;
+}
+
+.app-url {
+    font-size: small;
+}
+
+.bottom-message {
+    font-size: small;
+}
