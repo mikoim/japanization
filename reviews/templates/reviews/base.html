@@ -1,15 +1,16 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Steam 日本語化情報">
+    <title>{{ title|default:"Steam 日本語化情報" }}</title>
+    <meta property="og:title" content="{{ title|default:"Steam 日本語化情報" }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% if request.is_secure %}https{% else %}http{% endif %}://{{ request.get_host }}{{ request.get_full_path }}">
     {% block extrahead %}{% endblock %}
 </head>
 <body>
-{% block content %}
-    {{ content }}
-{% endblock %}
+{% block content %}{% endblock %}
 </body>
 </html>
