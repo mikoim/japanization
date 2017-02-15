@@ -1,5 +1,6 @@
-from .utils import privileged_members
 from django.contrib.auth.models import Permission
+
+from .utils import privileged_members
 
 
 def check_group_status(backend, user, response, *args, **kwargs):

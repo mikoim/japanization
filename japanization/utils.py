@@ -1,6 +1,6 @@
 import requests
-from django.core.cache import cache
 from bs4 import BeautifulSoup
+from django.core.cache import cache
 
 
 def privileged_members(group_name: str) -> list:

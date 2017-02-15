@@ -2,8 +2,8 @@ from django.conf.urls import include, url
 from django.views.generic import TemplateView, ListView, RedirectView
 from rest_framework.routers import DefaultRouter
 
-from .views import ReviewViewSet
 from .models import Review
+from .views import ReviewViewSet
 
 router = DefaultRouter()
 router.register(r'reviews', ReviewViewSet)
