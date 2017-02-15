@@ -26,13 +26,17 @@
             {% for review in object_list %}
             <div class="col s12 m6 l4">
                 <div class="card small">
-                    <div class="card-image">
-                        <a href="http://store.steampowered.com/app/{{ review.steam_app_id }}">
-                            <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg" alt="{{ review.name }}">
-                        </a>
-                        <span class="card-title hide-on-small-only">{{ review.name }}</span>
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg" alt="{{ review.name }}" title="{{ review.name }}">
                     </div>
                     <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{ review.name }}<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ review.review_detail_link }}">詳細情報</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ review.name }}<i class="material-icons right">close</i></span>
                         <p>
                             {% if review.localized_by_developer %}
                                 [開発者による対応]
@@ -43,9 +47,7 @@
                             {% endif %}
                         </p>
                         <p>{{ review.review_summary }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{ review.review_detail_link }}">詳細情報</a>
+                        <p><a href="{{ review.review_detail_link }}">詳細情報</a></p>
                     </div>
                 </div>
             </div>
