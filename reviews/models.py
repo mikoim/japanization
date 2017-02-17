@@ -6,6 +6,7 @@ class Review(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     steam_app_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255, default='Don\'t type this field.')
+    localization_status = models.TextField(blank=True)
     review_summary = models.TextField()
     review_detail = models.TextField(blank=True)
     review_detail_link = models.CharField(max_length=255, blank=True)

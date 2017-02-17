@@ -52,7 +52,9 @@
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ review.name }}<i class="material-icons right">close</i></span>
                         <p>
-                            {% if review.localized_by_developer %}
+                            {% if review.localization_status != "" %}
+                                [{{ review.localization_status }}]
+                            {% elif review.localized_by_developer %}
                                 [開発者による対応]
                             {% elif review.localized_by_community %}
                                 [コミュニティによる対応]

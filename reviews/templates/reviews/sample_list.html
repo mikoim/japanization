@@ -120,7 +120,9 @@
             <div class="app-info-box">
                 <span class="app-title">{{ review.name }}</span><br>
                 <span class="app-japanize">
-                    {% if review.localized_by_developer %}
+                    {% if review.localization_status != "" %}
+                        [{{ review.localization_status }}]
+                    {% elif review.localized_by_developer %}
                         [開発者による対応]
                     {% elif review.localized_by_community %}
                         [コミュニティによる対応]
