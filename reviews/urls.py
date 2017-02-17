@@ -9,8 +9,8 @@ router = DefaultRouter()
 router.register(r'reviews', ReviewViewSet)
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='/sample')),
-    url(r'^api/', include(router.urls)),
-    url(r'^sample$', ListView.as_view(model=Review)),
-    url(r'^edit$', TemplateView.as_view(template_name='reviews/edit.html')),
+    url(r'^$', RedirectView.as_view(url='/sample'), name='reviews-index'),
+    url(r'^api/', include(router.urls), name='reviews-api'),
+    url(r'^sample$', ListView.as_view(model=Review), name='reviews-sample'),
+    url(r'^edit$', TemplateView.as_view(template_name='reviews/edit.html'), name='reviews-edit'),
 ]

@@ -6,14 +6,30 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet" media="screen">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script>
+        $(function () {
+            $(".button-collapse").sideNav();
+        });
+    </script>
     <link rel="stylesheet" href="{% static "reviews/style.css" %}">
 {% endblock extrahead %}
 
 {% block content %}
-    <header>
+<header>
     <nav>
         <div class="nav-wrapper grey darken-4">
-            <a href="/" class="brand-logo center">Steam 日本語化情報</a>
+            <a href="{% url 'reviews-index' %}" class="brand-logo center">Steam 日本語化情報</a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/api">API</a></li>
+                <li><a href="{% url 'reviews-sample' %}">Sample</a></li>
+                <li><a href="{% url 'reviews-edit' %}">Edit</a></li>
+            </ul>
+            <ul class="side-nav" id="nav-mobile">
+                <li><a href="/api">API</a></li>
+                <li><a href="{% url 'reviews-sample' %}">Sample</a></li>
+                <li><a href="{% url 'reviews-edit' %}">Edit</a></li>
+            </ul>
         </div>
     </nav>
 </header>
