@@ -29,10 +29,11 @@ class SteamStore(object):
                 raise SteamException('Steam API returned non-200 status')
 
             j = r.json()
-            cache.set(cache_key, j, 1209600)
 
             if app_id_str not in j or not j[app_id_str]['success']:
                 raise SteamException('Steam API returned unexpected error')
+
+            cache.set(cache_key, j, 1209600)
 
         return j[app_id_str]['data']
 
