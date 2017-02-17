@@ -5,5 +5,5 @@ from .serializers import ReviewSerializer
 
 
 class ReviewViewSet(ReadOnlyModelViewSet):
-    queryset = Review.objects.all()
+    queryset = Review.objects.filter(published=True, invalid=False)
     serializer_class = ReviewSerializer
