@@ -7,7 +7,7 @@ from .utils import SteamStore, SteamException
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
-        'updated_at', 'steam_app_id', 'name', 'localized_by_developer', 'localized_by_community', 'published', 'invalid'
+        'updated_at', 'steam_app_id', 'name', 'localization_status', 'review_summary', 'review_detail', 'localized_by_developer', 'localized_by_community', 'published', 'invalid'
     )
     list_filter = [
         'updated_at', 'localized_by_developer', 'localized_by_community', 'published', 'invalid'
