@@ -11,9 +11,9 @@ class Review(models.Model):
     review_summary = models.TextField()
     review_detail = models.TextField(blank=True)
     review_detail_link = models.CharField(max_length=255, blank=True)
-    localized_by_developer = models.BooleanField()
-    localized_by_community = models.BooleanField()
-    published = models.BooleanField()
+    localized_by_developer = models.BooleanField(default=False)
+    localized_by_community = models.BooleanField(default=False)
+    published = models.BooleanField(default=False)
     invalid = models.BooleanField(default=True, editable=False)
 
     class Meta:
