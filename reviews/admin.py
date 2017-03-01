@@ -46,7 +46,8 @@ class ReviewAdmin(admin.ModelAdmin):
 
             if data:
                 row.name = store.name(data)
-                row.localized_by_developer = store.is_support_japanese(data)
+                if store.is_support_japanese(data):
+                    row.localized_by_developer = True
                 row.invalid = False
                 success += 1
 
