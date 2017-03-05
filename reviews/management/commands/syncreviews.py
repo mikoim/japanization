@@ -49,7 +49,7 @@ class Command(BaseCommand):
                         self.stderr.write(self.style.ERROR(obj))
                         raise CommandError('Steam API returned unexpected error')
 
-                    cache.set(cache_key, obj, 1800)
+                    cache.set(cache_key, obj, 60 * 60)
 
                 results_html = BeautifulSoup(obj['results_html'], 'lxml')
 

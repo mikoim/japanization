@@ -9,7 +9,7 @@ def privileged_members(group_name: str) -> list:
 
     if not members:
         members = privileged_members_raw(group_name)
-        cache.set(key, members, 900)
+        cache.set(key, members, 60 * 60)
 
     return members
 
@@ -33,7 +33,7 @@ def steam_id_by_name(name: str) -> list:
 
     if not steam_id:
         steam_id = steam_id_by_name(name)
-        cache.set(key, steam_id, 604800)
+        cache.set(key, steam_id, 60 * 60 * 24 * 30)
 
     return steam_id
 
