@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from django.core.cache import cache
 
 
-def privileged_members(group_name: str) -> list:
+def privileged_members(group_name: str) -> dict:
     key = 'privileged_members_{:s}'.format(group_name)
     members = cache.get(key)
 
@@ -14,7 +14,7 @@ def privileged_members(group_name: str) -> list:
     return members
 
 
-def __privileged_members(group_name: str) -> list:
+def __privileged_members(group_name: str) -> dict:
     res = requests.get('http://steamcommunity.com/groups/{:s}/members'.format(group_name), {
         'content_only': True
     })
@@ -22,9 +22,9 @@ def __privileged_members(group_name: str) -> list:
     if res.status_code is not 200:
         raise SteamScraperError('Can\'t retrieve group members page')
 
-    members = parse_privileged_member_names(res.text)
+    members = parse_privileged_member(res.text)
 
-    return [steam_id_by_name(m) for m in members]
+    return {steam_id_by_name(k): v for k, v in members.items()}
 
 
 def steam_id_by_name(name: str) -> list:
@@ -54,10 +54,14 @@ def parse_steam_id(xml: str) -> str:
     return str(root.find('steamID64').contents[0])
 
 
-def parse_privileged_member_names(html: str) -> list:
+def parse_privileged_member(html: str) -> dict:
     root = BeautifulSoup(html, 'lxml')
     members_child = root.find_all('div', class_='rank_icon')
-    members = [m.parent.find('a', class_='linkFriend').get('href').split('/')[-1] for m in members_child]
+    members = {
+        m.parent.find('a', class_='linkFriend').get('href').split('/')[-1]: m['title']
+        for m in members_child
+        }  # {'a': 'Group Owner', 'b': 'Group Officer', 'c': 'Group Moderator'}
+
     return members
 
 
