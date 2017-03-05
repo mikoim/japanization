@@ -16,7 +16,7 @@ class Review(models.Model):
     published = models.BooleanField(default=False)
     invalid = models.BooleanField(default=True, editable=False)
 
-    class Meta:
+    class Meta(object):
         ordering = ('name',)
 
     def __str__(self):

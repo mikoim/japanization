@@ -7,11 +7,15 @@ from .utils import SteamStore, SteamException
 
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
-        'updated_at', 'steam_app_id', 'name', 'localization_status', 'review_summary', 'review_detail', 'localized_by_developer', 'localized_by_community', 'published', 'invalid'
+        'steam_app_id', 'name', 'localization_status', 'review_summary', 'review_detail', 'review_detail_link'
+        'localized_by_developer', 'localized_by_community',
+        'published', 'invalid'
     )
+
     list_filter = [
         'updated_at', 'localized_by_developer', 'localized_by_community', 'published', 'invalid'
     ]
+
     actions = ['mark_as_draft', 'mark_as_published', 'sync_with_steam']
 
     def mark_as_draft(self, request, queryset):
