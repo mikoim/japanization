@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>日本語化情報の JSON 利用に関するマニュアル</title>
+    <style>
+        pre {
+            overflow: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .sample {
+            width: 80%;
+            padding: 2em;
+            background-color: #ddd;
+        }
+
+        dt {
+            font-weight: bolder;
+        }
+    </style>
+<body>
+
+<h1>日本語化情報の JSON 利用に関するマニュアル</h1>
+
+<h2>ご利用に当たって</h2>
+
+<p><a href="http://steamcommunity.com/groups/japanization">日本語化情報</a> が保守管理している
+    <a href="https://japanization.net/api/reviews/?format=json">データベース(JSON)</a> は、下記事項を守っていただける限りどなたでもご自由に利用していただけます。
+</p>
+
+<ol>
+    <li><a href="https://japanization.net/api/reviews/?format=json">データベース(JSON)</a>
+        を利用して情報を表示したページには、必ず下記ソースコードを表示して下さい。
+    </li>
+    <li><a href="https://japanization.net/api/reviews/?format=json">データベース(JSON)</a>
+        の内容は常にメンテナンスされていますので、ローカル環境に永続的な保存は行わないで下さい (動的にご利用下さい) 。
+    </li>
+    <li>アクセスが多くなる場合は短期的なキャッシュを取るなど、適宜対策の上ご利用下さい。</li>
+    <li>情報の不正な利用やデベロッパー・パブリッシャー様からの問い合わせなどがあった場合は <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a>
+        の管理人にご報告下さい。
+    </li>
+    <li><a href="https://japanization.net/api/reviews/?format=json">データベース(JSON)</a>
+        の利用は自己責任とさせて頂きます。また永続的な保守・公開を保証するものではありません。
+    </li>
+</ol>
+
+<h2>ソースコード</h2>
+<p>以下のソースをコピーペーストしてご利用下さい。</p>
+
+<pre class="sample">
+&lt;!-- ここから //--&gt;
+
+&lt;p&gt;当ページ(サイト)では &lt;a href="http://store.steampowered.com/"&gt;Steam&lt;/a&gt; 内の &lt;a href="http://steamcommunity.com/groups/japanization"&gt;日本語化情報&lt;/a&gt; が保守管理している &lt;a href="https://japanization.net/api/reviews/?format=json"&gt;データベース(JSON)&lt;/a&gt; を利用しています。&lt;/p&gt;
+
+&lt;dl&gt;
+	&lt;dt&gt;お願い&lt;/dt&gt;
+	&lt;ol&gt;
+		&lt;li&gt;日本語化パッチに関する情報は、多くの皆様からの情報提供と無償ボランティアによる保守運営で成り立っています。配布が中断されている・パッチが適用できない、など掲載されている情報に不備が見つかった場合 &lt;a href="http://steamcommunity.com/groups/japanization"&gt;日本語化情報&lt;/a&gt; にて積極的に情報を提供して下さいますようよろしくお願いいたします。&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/dl&gt;
+
+&lt;dl&gt;
+	&lt;dt&gt;免責&lt;/dt&gt;
+	&lt;ol&gt;
+		&lt;li&gt;各リンク先は外部サイトとなっており 当サイト 並びに &lt;a href="http://steamcommunity.com/groups/japanization"&gt;日本語化情報&lt;/a&gt; とは一切の関係がありません。閲覧は自己責任でお願いします。&lt;/li&gt;
+		&lt;li&gt;日本語化パッチは配布が中断されたり、最新版への適用が出来ない場合があります。またウィルス感染の危険性もあります。ファイルのダウンロード及びパッチ適用は自己責任で行ってください。&lt;/li&gt;
+		&lt;li&gt;記載されている会社名・製品名などの名称は各社の商標または登録商標です。&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/dl&gt;
+
+&lt;dl&gt;
+	&lt;dt&gt;デベロッパー・パブリッシャー 各位(Dear Developer / Publisher)&lt;/dt&gt;
+	&lt;ol&gt;
+		&lt;li&gt;掲載情報の取り下げや日本語化情報の提供に関するお問い合わせは &lt;a href="http://steamcommunity.com/groups/japanization"&gt;日本語化情報&lt;/a&gt; までお願い致します。&lt;br /&gt;
+For inquiries concerning withdrawal of posted information and provision of Japanese localize information, please contact &lt;a href="http://steamcommunity.com/groups/japanization"&gt;Japanization Group in Steam&lt;/a&gt;. &lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/dl&gt;
+
+&lt;!-- ここまで //--&gt;
+</pre>
+
+<p>ソースは以下のように表示されますので css 等で適宜成型して下さい。</p>
+
+<div class="sample">
+    <p>当ページ(サイト)では <a href="http://store.steampowered.com/">Steam</a> 内の
+        <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a> が保守管理している
+        <a href="https://japanization.net/api/reviews/?format=json">データベース(JSON)</a> を利用しています。</p>
+
+    <dl>
+        <dt>お願い</dt>
+        <ol>
+            <li>日本語化パッチに関する情報は、多くの皆様からの情報提供と無償ボランティアによる保守運営で成り立っています。配布が中断されている・パッチが適用できない、など掲載されている情報に不備が見つかった場合
+                <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a> にて積極的に情報を提供して下さいますようよろしくお願いいたします。
+            </li>
+        </ol>
+    </dl>
+
+    <dl>
+        <dt>免責</dt>
+        <ol>
+            <li>各リンク先は外部サイトとなっており 当サイト 並びに <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a>
+                とは一切の関係がありません。閲覧は自己責任でお願いします。
+            </li>
+            <li>日本語化パッチは配布が中断されたり、最新版への適用が出来ない場合があります。またウィルス感染の危険性もあります。ファイルのダウンロード及びパッチ適用は自己責任で行ってください。</li>
+            <li>記載されている会社名・製品名などの名称は各社の商標または登録商標です。</li>
+        </ol>
+    </dl>
+
+    <dl>
+        <dt>デベロッパー・パブリッシャー 各位(Dear Developer / Publisher)</dt>
+        <ol>
+            <li>掲載情報の取り下げや日本語化情報の提供に関するお問い合わせは <a href="http://steamcommunity.com/groups/japanization">日本語化情報</a>
+                までお願い致します。<br/>
+                For inquiries concerning withdrawal of posted information and provision of Japanese localize
+                information, please contact <a href="http://steamcommunity.com/groups/japanization">Japanization Group
+                    in Steam</a>.
+            </li>
+        </ol>
+    </dl>
+</div>
+
+<hr/>
+
+<h2>サンプルページ</h2>
+<a href="https://japanization.net/sample">Steam 日本語化情報グループ 掲載情報</a>
+<br/>
+<br/>
+
+<hr/>
+
+</body>
+</html>
