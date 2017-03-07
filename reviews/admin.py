@@ -18,6 +18,8 @@ class ReviewAdmin(admin.ModelAdmin):
 
     actions = ['mark_as_draft', 'mark_as_published', 'sync_with_steam']
 
+    list_per_page = 500
+
     def mark_as_draft(self, request, queryset):
         rows_updated = queryset.update(published=False)
         if rows_updated == 1:
