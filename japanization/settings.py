@@ -192,11 +192,16 @@ REST_FRAMEWORK = {
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# CORS
-CORS_ORIGIN_ALLOW_ALL = True
+# Redirect HTTP Requests to HTTPS in production environment
+SECURE_SSL_REDIRECT = False
+if os.environ.get('DEBUG') is None:
+    SECURE_SSL_REDIRECT = True
 
 # Security Tweaks
 SECURE_BROWSER_XSS_FILTER = True
