@@ -4,14 +4,15 @@
 {% block extrahead %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet" media="screen">
+    <link href="{% static "reviews/style.css" %}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/3.0.0/lazysizes.min.js"></script>
     <script>
         $(function () {
             $(".button-collapse").sideNav();
         });
     </script>
-    <link rel="stylesheet" href="{% static "reviews/style.css" %}">
 {% endblock extrahead %}
 
 {% block content %}
@@ -43,7 +44,7 @@
             <div class="col s12 m6 l4">
                 <div class="card small">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg" alt="{{ review.name }}" title="{{ review.name }}">
+                        <img class="activator lazyload" src="{% static "reviews/empty.png" %}" alt="{{ review.name }}" title="{{ review.name }}" data-sizes="auto" data-srcset="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg 460w">
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">{{ review.name }}<i class="material-icons right">more_vert</i></span>

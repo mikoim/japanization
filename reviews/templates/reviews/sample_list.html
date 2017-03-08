@@ -1,6 +1,8 @@
 {% extends "reviews/base.html" %}
+{% load static %}
 
 {% block extrahead %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/3.0.0/lazysizes.min.js"></script>
     <style>
         /* @import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic); */
         body {
@@ -114,7 +116,7 @@
         <div class="app-box">
             <div class="app-icon-box">
                 <a href="http://store.steampowered.com/app/{{ review.steam_app_id }}/">
-                    <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg" alt="{{ review.name }}" class="app-icon">
+                    <img class="app-icon lazyload" src="{% static "reviews/empty.png" %}" alt="{{ review.name }}" title="{{ review.name }}" data-sizes="auto" data-srcset="http://cdn.akamai.steamstatic.com/steam/apps/{{ review.steam_app_id }}/header.jpg 460w">
                 </a>
             </div>
             <div class="app-info-box">
