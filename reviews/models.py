@@ -5,7 +5,7 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     steam_app_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=255, default='!!! DON\'T TOUCH !!!',
+    name = models.CharField(max_length=255, db_index=True, default='!!! DON\'T TOUCH !!!',
                             help_text='This field will be filled automatically by synchronizing with Steam.')
     localization_status = models.TextField(blank=True)
     review_summary = models.TextField()
