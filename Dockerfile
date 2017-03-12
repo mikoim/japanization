@@ -12,4 +12,6 @@ RUN pip3 install -r requirements.txt
 COPY . /srv
 RUN python3 manage.py collectstatic --no-input
 
-ENTRYPOINT ["gunicorn", "japanization.wsgi:application"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0","japanization.wsgi:application"]
+
+EXPOSE 8000
