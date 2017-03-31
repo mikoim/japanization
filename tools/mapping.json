@@ -1,0 +1,642 @@
+{
+  "appdetails": {
+    "mappings": {
+      "raw": {
+        "properties": {
+          "about_the_game": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "achievements": {
+            "properties": {
+              "highlighted": {
+                "properties": {
+                  "name": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "path": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  }
+                }
+              },
+              "total": {
+                "type": "long"
+              }
+            }
+          },
+          "alternate_appid": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "background": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "categories": {
+            "properties": {
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "id": {
+                "type": "long"
+              }
+            }
+          },
+          "controller_support": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "demos": {
+            "properties": {
+              "appid": {
+                "type": "long"
+              },
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "detailed_description": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "developers": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "dlc": {
+            "type": "long"
+          },
+          "drm_notice": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "ext_user_account_notice": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "fullgame": {
+            "properties": {
+              "appid": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "genres": {
+            "properties": {
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "header_image": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "is_free": {
+            "type": "boolean"
+          },
+          "legal_notice": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "linux_requirements": {
+            "properties": {
+              "minimum": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "recommended": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "mac_requirements": {
+            "properties": {
+              "minimum": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "recommended": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "metacritic": {
+            "properties": {
+              "score": {
+                "type": "long"
+              },
+              "url": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "movies": {
+            "properties": {
+              "highlight": {
+                "type": "boolean"
+              },
+              "id": {
+                "type": "long"
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "thumbnail": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "webm": {
+                "properties": {
+                  "480": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "max": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "package_groups": {
+            "properties": {
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "display_type": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "is_recurring_subscription": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "name": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "save_text": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "selection_text": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "subs": {
+                "properties": {
+                  "can_get_free_license": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "is_free_license": {
+                    "type": "boolean"
+                  },
+                  "option_description": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "option_text": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "packageid": {
+                    "type": "long"
+                  },
+                  "percent_savings": {
+                    "type": "long"
+                  },
+                  "percent_savings_text": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 10922
+                      }
+                    }
+                  },
+                  "price_in_cents_with_discount": {
+                    "type": "long"
+                  }
+                }
+              },
+              "title": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "packages": {
+            "type": "long"
+          },
+          "pc_requirements": {
+            "properties": {
+              "minimum": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "recommended": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "platforms": {
+            "properties": {
+              "linux": {
+                "type": "boolean"
+              },
+              "mac": {
+                "type": "boolean"
+              },
+              "windows": {
+                "type": "boolean"
+              }
+            }
+          },
+          "price_overview": {
+            "properties": {
+              "currency": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "discount_percent": {
+                "type": "long"
+              },
+              "final": {
+                "type": "long"
+              },
+              "initial": {
+                "type": "long"
+              }
+            }
+          },
+          "publishers": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "recommendations": {
+            "properties": {
+              "total": {
+                "type": "long"
+              }
+            }
+          },
+          "release_date": {
+            "properties": {
+              "coming_soon": {
+                "type": "boolean"
+              },
+              "date": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "required_age": {
+            "type": "long"
+          },
+          "reviews": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "screenshots": {
+            "properties": {
+              "id": {
+                "type": "long"
+              },
+              "path_full": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "path_thumbnail": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "short_description": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "steam_appid": {
+            "type": "long"
+          },
+          "support_info": {
+            "properties": {
+              "email": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              },
+              "url": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 10922
+                  }
+                }
+              }
+            }
+          },
+          "supported_languages": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "timestamp": {
+            "type": "date"
+          },
+          "type": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          },
+          "website": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 10922
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
