@@ -6,7 +6,7 @@ dj-database-url==0.4.2
 Django==1.11.1
 django-cors-headers==2.0.2
 django-redis-cache==1.7.1
-djangorestframework==3.6.3
+djangorestframework==3.9.1
 gunicorn==19.7.1
 lxml==3.7.3
 oauthlib==2.0.2
