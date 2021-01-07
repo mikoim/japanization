@@ -8,7 +8,7 @@ django-cors-headers==2.0.2
 django-redis-cache==1.7.1
 djangorestframework==3.6.3
 gunicorn==19.7.1
-lxml==3.7.3
+lxml==4.6.2
 oauthlib==2.0.2
 psycopg2==2.7.1
 pycparser==2.17
